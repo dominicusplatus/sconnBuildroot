@@ -1,0 +1,14 @@
+  spi1: spi@f8008000 {
+                                cs-gpios = <&pioC 25 0>, <0>, <0>, <&pioD 16 0>;
+                                status = "okay";
+                                spidev@0 {
+                                        compatible = "linux,spidev";
+                                        spi-max-frequency = <24000000>;
+                                        reg = <0>;
+                                };
+                        };
+
+
+
+
+User mode SPI device driver support

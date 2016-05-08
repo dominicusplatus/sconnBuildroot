@@ -1,0 +1,21 @@
+compile buildroot :
+make <config name>     <config name> -> configs/
+make menuconfig
+make
+
+flash device :
+short J7
+power up
+disconn J7
+sudo ./board/atmel/flasher.sh output/ /dev/ttyACM0 sama5d4_xplained
+
+compile source :
+cd output/host/usr/bin
+gcc
+
+upload file :
+scp <file name> <remote username>@<target hostname>:<target path>
+
+
+sudo ./board/sconn/sconngkp7in/flasher.sh output/ /dev/ttyACM0 sconngkp7in
+

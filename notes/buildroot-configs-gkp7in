@@ -1,0 +1,21 @@
+dts name :  sconngkp7in.dts
+dtsi name : sconngkp7in.dtsi
+bootstrap defconfig : sama5d4_xplainednf_uboot_secure
+uboot defconfig : sama5d4_xplained_nandflash
+
+
+buildroot makefiles : 
+include package/Makefile.in
+include support/dependencies/dependencies.mk
+
+include toolchain/*.mk
+include toolchain/*/*.mk
+
+include $(sort $(wildcard package/*/*.mk))
+
+include boot/common.mk
+include linux/linux.mk
+include fs/common.mk
+
+include $(BR2_EXTERNAL)/external.mk
+
